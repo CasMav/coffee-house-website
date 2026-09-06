@@ -4,326 +4,8 @@
 <head>
 
     <title>The Coffee House</title>
+    <link rel="stylesheet" href="style.css">
 
-    <style>
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: #111827;
-            color: white;
-            font-family: Arial, sans-serif;
-            padding: 50px;
-        }
-
-        h1 {
-            font-size: 40px;
-        }
-
-        p {
-            font-size: 18px;
-        }
-
-        button {
-            background-color: #f59e0b;
-            color: #111827;
-            border: none;
-            padding: 14px 25px;
-            font-size: 20px;
-            font-weight: bold;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            transform: scale(1.10);
-        }
-
-
-        /* NAVBAR */
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            background-color: #111827;
-            padding: 15px 0;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin-left: 40px;
-        }
-
-        .navbar a:hover {
-            color: #cbc5ea;
-        }
-
-        .navbar h2 {
-            font-size: 30px;
-        }
-
-
-        /* HERO */
-
-        .hero {
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 60px;
-            line-height: 1.05;
-            margin: 10px 0 20px;
-        }
-
-        .eyebrow {
-            color: #f59e0b;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 3px;
-        }
-
-        .hero-text {
-            font-size: 20px;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            line-height: 1.6;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .secondary-button {
-            background-color: transparent;
-            color: white;
-            border: 1px solid white;
-        }
-
-
-        /* MENU */
-
-        .menu-section {
-            padding: 100px 50px;
-            text-align: center;
-        }
-
-        .menu-section h2 {
-            font-size: 42px;
-            margin-top: 10px;
-        }
-
-        .menu-cards {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 50px;
-        }
-
-        .menu-card {
-            background-color: #1f2937;
-            padding: 30px;
-            width: 280px;
-            border-radius: 20px;
-            overflow: hidden;
-            text-align: left;
-            transition: transform 1.5s ease;
-        }
-
-        .menu-card h3 {
-            font-size: 24px;
-            margin-top: 0;
-        }
-
-        .menu-card p {
-            color: #d1d5db;
-            line-height: 1.5;
-        }
-
-        .menu-card strong {
-            color: #f59e0b;
-            font-size: 20px;
-        }
-
-        .menu-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .menu-card-content {
-            padding: 25px;
-        }
-
-        .menu-card:hover {
-            transform: translateY(-8px);
-        }
-
-
-        /* ABOUT */
-
-        .about-section {
-            padding: 120px 50px;
-            display: flex;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .about-content {
-            max-width: 700px;
-        }
-
-        .about-content h2 {
-            font-size: 42px;
-            margin: 10px 0 25px;
-        }
-
-        .about-content p {
-            line-height: 1.7;
-            color: #d1d5db;
-        }
-
-
-        /* CONTACT */
-
-        .contact-section {
-            padding: 120px 50px;
-            text-align: center;
-        }
-
-        .contact-section h2 {
-            font-size: 42px;
-            margin: 10px 0 25px;
-        }
-
-        .contact-section p {
-            color: #d1d5db;
-            line-height: 1.7;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 40px auto 0;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            background-color: #1f2937;
-            color: white;
-            border: 1px solid #374151;
-            padding: 16px;
-            border-radius: 10px;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-        }
-
-        .contact-form textarea {
-            resize: vertical;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: #f59e0b;
-        }
-
-        .contact-form button {
-            margin-top: 10px;
-        }
-
-
-        /* FOOTER */
-
-        .footer {
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-            border-top: 1px solid #374151;
-        }
-
-        .footer p {
-            color: #9ca3af;
-            font-size: 14px;
-        }
-
-
-        /* MOBILE */
-
-        @media (max-width: 900px) {
-
-            body {
-                padding: 20px;
-            }
-
-            .navbar {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-
-            .navbar a {
-                margin-left: 10px;
-                margin-right: 10px;
-            }
-
-            .hero {
-                min-height: 500px;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .hero-text {
-                font-size: 18px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero-buttons button {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .menu-cards {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .menu-card {
-                width: 100%;
-                max-width: 350px;
-            }
-
-            .menu-section,
-            .about-section,
-            .contact-section {
-                padding: 80px 20px;
-            }
-
-        }
-
-    </style>
 
 </head>
 
@@ -388,7 +70,7 @@
 
     <!-- MENU -->
 
-    <section id="menu" class="menu-section">
+    <section id="menu" class="menu-section reveal-left">
 
         <p class="eyebrow">OUR MENU</p>
 
@@ -501,7 +183,7 @@
 
     <!-- ABOUT -->
 
-    <section id="about" class="about-section">
+    <section id="about" class="about-section reveal-right">
 
         <div class="about-content">
 
@@ -523,7 +205,7 @@
 
     <!-- CONTACT -->
 
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section reveal-left">
 
         <p class="eyebrow">CONTACT US</p>
 
@@ -580,53 +262,7 @@
 
     <!-- JAVASCRIPT -->
 
-    <script>
-
-        const menuButton =
-            document.getElementById("menuButton");
-
-        const menuSection =
-            document.getElementById("menu");
-
-        menuButton.addEventListener("click", function() {
-
-            menuSection.scrollIntoView({
-                behavior: "smooth"
-            });
-
-        });
-
-
-        const contactButton =
-            document.getElementById("contactButton");
-
-        const contactSection =
-            document.getElementById("contact");
-
-        contactButton.addEventListener("click", function() {
-
-            contactSection.scrollIntoView({
-                behavior: "smooth"
-            });
-
-        });
-
-
-        const contactForm =
-            document.getElementById("contactForm");
-
-        contactForm.addEventListener("submit", function(event) {
-
-            event.preventDefault();
-
-            alert(
-                "Thanks for your message! We'll get back to you soon."
-            );
-
-        });
-
-    </script>
-
+<script src="script.js"></script>
 
 </body>
 
